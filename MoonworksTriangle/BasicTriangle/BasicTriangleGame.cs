@@ -108,6 +108,9 @@ public class BasicTriangleGame : Game
             var renderPass = cmdbuf.BeginRenderPass(
                 new ColorTargetInfo(swapchainTexture, Color.Black)
             );
+            renderPass.BindGraphicsPipeline(_pipeline);
+            renderPass.BindVertexBuffers(_vertexBuffer);
+            renderPass.DrawPrimitives(3, 1, 0, 0);
             cmdbuf.EndRenderPass(renderPass);
         }
         GraphicsDevice.Submit(cmdbuf);
