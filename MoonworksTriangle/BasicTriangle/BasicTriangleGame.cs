@@ -7,14 +7,9 @@ using Buffer = MoonWorks.Graphics.Buffer;
 namespace BasicTriangle;
 
 [StructLayout(LayoutKind.Sequential)]
-public struct PositionVertex : IVertexType
+public struct PositionVertex(Vector3 position) : IVertexType
 {
-    public Vector3 Position;
-
-    public PositionVertex(Vector3 position)
-    {
-        Position = position;
-    }
+    public Vector3 Position = position;
 
     public static VertexElementFormat[] Formats =>
     [
@@ -27,8 +22,8 @@ public struct PositionVertex : IVertexType
 
 public class BasicTriangleGame : Game
 {
-    private Buffer _vertexBuffer;
-    private GraphicsPipeline _pipeline;
+    private readonly Buffer _vertexBuffer;
+    private readonly GraphicsPipeline _pipeline;
 
     public BasicTriangleGame(
         AppInfo appInfo,

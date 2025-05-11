@@ -7,8 +7,8 @@ internal class Program
     {
         var windowCreateInfo = new WindowCreateInfo(
              "Triangle Example Game",
-             640,
-             360,
+             800,
+             600,
              ScreenMode.Windowed
          );
 
