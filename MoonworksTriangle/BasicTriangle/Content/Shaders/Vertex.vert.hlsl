@@ -1,6 +1,6 @@
 ﻿struct Input
 {
-    float3 Position : TEXCOORD0;
+    float2 Position : TEXCOORD0;
 };
 
 struct Output
@@ -11,6 +11,6 @@ struct Output
 Output main(Input input)
 {
     Output output;
-    output.Position = float4(input.Position, 1.0f);
+    output.Position = float4(input.Position, 0.0f, 1.0f);
     return output;
 }

@@ -7,13 +7,13 @@ using Buffer = MoonWorks.Graphics.Buffer;
 namespace BasicTriangle;
 
 [StructLayout(LayoutKind.Sequential)]
-public struct PositionVertex(Vector3 position) : IVertexType
+public struct PositionVertex(Vector2 position) : IVertexType
 {
-    public Vector3 Position = position;
+    public Vector2 Position = position;
 
     public static VertexElementFormat[] Formats =>
     [
-        VertexElementFormat.Float3
+        VertexElementFormat.Float2
     ];
 
 
@@ -78,9 +78,9 @@ public class BasicTriangleGame : Game
         _pipeline = GraphicsPipeline.Create(GraphicsDevice, pipelineCreateInfo);
 
         ReadOnlySpan<PositionVertex> vertexData = [
-           new PositionVertex(new Vector3(-0.5f, -0.5f, 0.0f)),
-           new PositionVertex(new Vector3(0.5f, -0.5f, 0.0f)),
-           new PositionVertex(new Vector3(0.0f, 0.5f, 0.0f))
+           new PositionVertex(new Vector2(-0.5f, -0.5f)),
+           new PositionVertex(new Vector2(0.5f, -0.5f)),
+           new PositionVertex(new Vector2(0.0f, 0.5f))
         ];
 
         var resourceUploader = new ResourceUploader(GraphicsDevice);
