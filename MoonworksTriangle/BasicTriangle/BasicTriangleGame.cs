@@ -96,8 +96,8 @@ public class BasicTriangleGame : Game
 
     protected override void Draw(double alpha)
     {
-        CommandBuffer cmdbuf = GraphicsDevice.AcquireCommandBuffer();
-        Texture swapchainTexture = cmdbuf.AcquireSwapchainTexture(MainWindow);
+        var cmdbuf = GraphicsDevice.AcquireCommandBuffer();
+        var swapchainTexture = cmdbuf.AcquireSwapchainTexture(MainWindow);
         if (swapchainTexture != null)
         {
             var renderPass = cmdbuf.BeginRenderPass(

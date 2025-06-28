@@ -1,6 +1,6 @@
 ﻿struct Input
 {
-    float2 Position : TEXCOORD0;
+    float2 Position : POSITION;
 };
 
 struct Output
