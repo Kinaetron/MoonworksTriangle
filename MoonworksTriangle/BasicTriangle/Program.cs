@@ -9,10 +9,9 @@ internal class Program
              "Triangle Example Game",
              800,
              600,
-             ScreenMode.Windowed
-         );
+             ScreenMode.Windowed);
 
-        var framePacingSettings = FramePacingSettings.CreateLatencyOptimized(60);
+        var framePacingSettings = FramePacingSettings.CreateLatencyOptimized(60, 60);
 
         var game = new BasicTriangleGame(
             new AppInfo("Triangle Example Game", "TriangleExampleGame"),

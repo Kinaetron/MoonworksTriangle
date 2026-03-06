@@ -98,7 +98,7 @@ public class BasicTriangleGame : Game
     {
         var cmdbuf = GraphicsDevice.AcquireCommandBuffer();
         var swapchainTexture = cmdbuf.AcquireSwapchainTexture(MainWindow);
-        if (swapchainTexture != null)
+        if (swapchainTexture is not null)
         {
             var renderPass = cmdbuf.BeginRenderPass(
                 new ColorTargetInfo(swapchainTexture, Color.Black)
@@ -109,5 +109,9 @@ public class BasicTriangleGame : Game
             cmdbuf.EndRenderPass(renderPass);
         }
         GraphicsDevice.Submit(cmdbuf);
+    }
+
+    protected override void Step()
+    {
     }
 }
